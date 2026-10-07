@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     }
 
     // Determine the recipient email (defaults to the one in .env.local, or a fallback)
-    const toEmail = process.env.CONTACT_EMAIL || 'hello@teqdeepseek.com';
+    const toEmail = process.env.CONTACT_EMAIL || 'teqdeepseek@gmail.com';
 
     // Send the email using Resend
     const data = await resend.emails.send({
