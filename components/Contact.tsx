@@ -28,9 +28,18 @@ export default function Contact() {
     
     // Simulate an API call abstraction
     try {
-      // In production, connect this to your API/CRM
-      // await submitLeadToBackend(formData);
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
       setStatus("success");
     } catch (error) {
       console.error(error);
