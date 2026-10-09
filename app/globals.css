@@ -1,7 +1,32 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-dark: #0f1f16;
+  --color-brand-darker: #08120c;
+  --color-brand-gold: #cba864;
+  --color-brand-gold-light: #e4cc95;
+  --color-brand-green: #1c3626;
+  --color-brand-green-light: #284c36;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-brand-dark);
+    color: #e2e8f0;
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .rotate-x-2 {
+    transform: rotateX(2deg);
+  }
+  .rotate-x-0 {
+    transform: rotateX(0deg);
   }
 }
